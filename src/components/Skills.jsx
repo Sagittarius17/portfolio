@@ -59,8 +59,8 @@ const Skills = () => {
                             <h2>TailwindCSS</h2>
                         </div>
                         <p>
-                            TailwindCSS is a Utility first CSS framework. It is a highly customizable, 
-                            low-level CSS framework that gives you all of the building blocks that you need to create a custom UI.</p>
+                            Tailwind is a Utility first highly customizable, low-level CSS framework that gives you
+                            all of the building blocks that you need to create a custom UI.</p>
                         <a href="https://tailwindcss.com/">Want to know more?</a>
                     </div>
                 </div>
