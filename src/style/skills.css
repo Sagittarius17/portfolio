@@ -54,6 +54,8 @@
 
 }
 
+/*ANIMATION GLASSBOX EFFECT*/
+
 /* .container .box:nth-child(1):before,
 .container .box:nth-child(1):after {
   background: linear-gradient(315deg, #ff0000, #4d0b74)
@@ -135,6 +137,8 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   animation-delay: -1s;
 } */
+
+/*ANIMATION GLASSBOX EFFECT*/
 
 .container .box:hover span:after {
   bottom: -50px;
