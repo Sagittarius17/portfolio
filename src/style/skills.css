@@ -25,8 +25,8 @@
   width: 50%;
   height: 100%;
   text-decoration: none;
-  background: rgb(247, 0, 0);
-  border: 5px solid rgb(217, 255, 0);
+  background: rgb(76, 0, 255);
+  border: 5px solid rgb(229, 255, 0);
   border-radius: 8px;
   transform: skewX(10deg);
   transition: 0.5s;
@@ -49,8 +49,9 @@
 .container .box:hover:before,
 .container .box:hover:after {
   transform: skewX(0deg);
-  left: 20px;
-  width: calc(100% - 90px);
+  left: 5px;
+  width: calc(100% - 60px);
+  background-color: #252424;
 
 }
 
@@ -162,10 +163,10 @@
   bottom: 0;
   padding: 20px 20px;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(5px); */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  border: 5px solid rgb(255, 0, 221);
+  border: 5px solid rgb(255, 238, 0);
   z-index: 1;
   transform: 0.5s;
   color: #fff;
