@@ -9,11 +9,9 @@ function Footer() {
                     <div class="flex flex-wrap justify-center">
                         <div class="grow-0 shrink-0 basis-auto w-full lg:w-10/12 px-3">
                             <div class="grid lg:grid-cols-2 gap-x-6 items-center">
-                                <div class="mb-2 lg:mb-0">
+                                <div class="mb-6 lg:mb-0">
                                     <h2 class="text-3xl font-bold">
-                                        Do not miss any updates.
-                                        <br />
-                                        <span class="text-blue-600">Subscribe to the newsletter</span>
+                                        Do not miss any updates. <span class="text-black">Subscribe to the newsletter</span>
                                     </h2>
                                 </div>
                                 <div class="mb-6 md:mb-0">

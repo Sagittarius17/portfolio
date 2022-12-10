@@ -4,13 +4,13 @@ import logo from '../images/lambda.png'
 function Navbar() {
     return (
         <div>
-            <nav class="fixed z-20 w-full sm:px-2 py-2.5 bg-white bg-opacity-10 border border-yellow-300 backdrop-blur-md drop-shadow-lg">
+            <nav class="z-20 w-full sm:px-2 py-2.5 bg-white bg-opacity-10 border border-yellow-300 backdrop-blur-md drop-shadow-lg">
                 <div class="flex flex-wrap justify-between items-center ml-5 pr-36">
                     <a href="https://twitter.com/shuvendusingha/" class="flex items-center"> 
                         <img src={logo} class="mr-3 h-6 sm:h-9" alt="Logo" />
                         <span class="flex self-center text-2xl font-semibold whitespace-nowrap dark:text-purple-300">
-                            <h1 class="self-center text-2xl font-semibold whitespace-nowrap dark:text-yellow-400">Port</h1>
-                            Folio
+                            <h1 class="self-center text-2xl font-semibold whitespace-nowrap dark:text-yellow-400">enthu</h1>
+                            &#123;Coder&#125;
                         </span>
                     </a>
                     <div class="flex md:order-2">

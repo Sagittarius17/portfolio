@@ -1,11 +1,10 @@
 import './App.css';
-import { Navbar, Footer, Skills, Loader } from './components'
+import { Navbar, Footer, Loader } from './components'
 
 const App = () => {
   return (
     <div className="App">
       <Navbar />
-      <Skills />
       <Footer />
     </div>
   );
