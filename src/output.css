@@ -25,6 +25,30 @@
   --tw-content: '';
 }
 
+.custom-cursor {
+  cursor: url('../src/assets/images/arrow.cur'), auto;
+}
+
+/*scrollbar design*/
+::-webkit-scrollbar {
+  width: 0.7em;
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+}
+::-webkit-scrollbar-thumb {
+  background-image: url(../src/assets/images/ripple.gif);
+  background-position: center;
+  border: 1px solid yellow;
+  border-radius: 100vh;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+/*scrollbar design*/
+
+
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -55,10 +79,29 @@ html {
 */
 
 body {
-  margin: 0;
+  background: repeating-linear-gradient(90deg, red, green, pink, blue, rgb(0, 255, 55), green, red);
+  background-repeat: repeat-x;
+  background-size: 400% 100%;
+  animation: AnimationName 6s linear infinite;
+  margin: 2px;
   /* 1 */
-  line-height: inherit;
+  line-height: unset;
   /* 2 */
+}
+@keyframes AnimationName {
+  0%{background-position:100% 50%}
+  100%{background-position:-33% 50%}
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  padding: 1rem;
+  width: 99.23%;
+  justify-content: center;
+}
+nav:hover {
+  background-image: url('../src/assets/images/hexaneon.gif');
 }
 
 /*
