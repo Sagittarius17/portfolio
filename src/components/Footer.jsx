@@ -5,32 +5,9 @@ function Footer() {
     return (
         <div>
             <footer class="flex flex-col items-center sm:p-2 bg-opacity-0 backdrop-blur-lg drop-shadow-lg bg-gradient-to-b from-red-600 to-indigo-900">
-                <section class="mb-10 text-gray-800 text-center lg:text-left">
-                    <div class="flex flex-wrap justify-center">
-                        <div class="grow-0 shrink-0 basis-auto w-full lg:w-10/12 px-3">
-                            <div class="grid lg:grid-cols-2 gap-x-6 items-center">
-                                <div class="mb-2 lg:mb-0">
-                                    <h2 class="text-3xl font-bold">
-                                        Do not miss any updates.
-                                        <br />
-                                        <span class="text-blue-600">Subscribe to the newsletter</span>
-                                    </h2>
-                                </div>
-                                <div class="mb-6 md:mb-0">
-                                    <div class="md:flex flex-row">
-                                        <input type="text" class="form-control block w-full px-4 py-2 mb-2 md:mb-0 md:mr-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Enter your email"/>
-                                        <button type="submit" class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true"data-mdb-ripple-color="light">
-                                            Subscribe
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
                 <div class="flex sm:my-2 md:flex md:justify-end sm:flex sm:justify-end">
-                    <div class="flex flex-row">
-                        <div class="flex flex-col ">
+                    <div class="flex sm:flex items-center">
+                        <div class="flex flex-col mx-12 items-center">
                             <h2 class="mb-3 text-2xl font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li>
@@ -47,7 +24,7 @@ function Footer() {
                                 </li>
                             </ul>
                         </div>
-                        <div class="flex flex-col mx-12">
+                        <div class="flex flex-col mx-12 items-center">
                             <h2 class="mb-3 text-2xl font-semibold text-gray-900 uppercase dark:text-white">Community</h2>
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li>
@@ -85,12 +62,12 @@ function Footer() {
                     <div>
                         <a href="#" class="flex items-center m-2 sm:flex-row">
                             <img src={logo} class="w-6 h-6 mt-2 mr-2 sm:mr-2 sm:mt-2"/>
-                            <span class="my-4 mb-2 text-sm sm:justify-center text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://google.com/" class="hover:underline">PortFolio</a>. Sob Rights Amar.</span>
+                            <span class="my-4 mb-2 text-sm sm:justify-center text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://google.com/" class="hover:underline">PortFolio</a>. Sob Rights Amar.</span>
                         </a>
                     </div>
                 </div>
             </footer>
-            <div class="flex h-10 pr-4 justify-center sm:flex-row sm:items-center bg-black">
+            <div class="flex h-20 items-center justify-center sm:flex-row sm:items-center bg-black">
                 <span class="mx-4 self-center text-xl font-semibold whitespace-nowrap dark:text-white">Powered by</span>
                 <a href="https://reactjs.org/" class="mx-1 m-2 text-gray-500 hover:text-gray-900 dark:hover:text-white">
                     <svg class="w-7 h-7" aria-label="React" role="img" viewBox="0 0 512 512"><rect rx="15%" fill="#fff"/><circle cx="256" cy="256" r="36" fill="currentColor"/><path stroke="currentColor" stroke-width="18" fill="none" d="M317.47 291.43a71 183 30 1 0-.05.09zm-122.89.09a183 71 60 1 0-.05-.09zm61.47 35.43a183 71 0 1 0-.1 0z"/></svg>

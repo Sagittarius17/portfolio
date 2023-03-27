@@ -8,7 +8,7 @@ import django from '../images/django.png'
 
 const Skills = () => {
     return (
-        <div class="pt-20">
+        <div id='skills' class="pt-20">
             <div class="container">
                 <div class="box">
                     <span></span>
