@@ -9,6 +9,7 @@
   border-top: 4px solid #ffffff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
+  z-index: 99;
 }
 
 @keyframes spin {

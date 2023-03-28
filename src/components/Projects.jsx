@@ -2,9 +2,9 @@ import React from 'react';
 
 function Projects() {
     return (
-        <div id="projects" className="container mx-auto px-4 py-8">
-            <h2 className="text-4xl text-white font-bold mb-8">Projects</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div id="projects">
+            <h2 className="flex sm:flex text-4xl text-white justify-center font-bold rounded-full border-t-8 border-l-8 border-r-8 border-solid pt-8">PROJECTS</h2>
+            <div className="grid grid-cols-1 m-8 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                     <img src="https://via.placeholder.com/640x360" alt="Project 1" className="w-full h-48 object-cover" />
                     <div className="p-4">

@@ -5,16 +5,18 @@ import reactjs from '../images/reactjs.png'
 import tailwindcss from '../images/tailwindcss.png'
 import sass from '../images/sass.png'
 import django from '../images/django.png'
+import "../style/skills.css"
 
 const Skills = () => {
     return (
-        <div id='skills' class="pt-20">
-            <div class="container">
-                <div class="box">
+        <div id='skills'>
+            <h2 className="flex sm:flex text-4xl text-white justify-center font-bold rounded-full border-t-8 border-l-8 border-r-8 border-solid pt-8">SKILLS</h2>
+            <div className="container">
+                <div className="box">
                     <span></span>
-                    <div class="content">
-                        <div class="flex flex-row justify-around items-center mb-4">
-                            <img src={python} alt="" class="w-20 h-20"/>
+                    <div className="content">
+                        <div className="flex flex-row justify-around items-center mb-4">
+                            <img src={python} alt="" className="w-20 h-20"/>
                             <h2>Python</h2>
                         </div>
                         <p>
@@ -24,11 +26,11 @@ const Skills = () => {
                         <a href="https://www.python.org/">Want to know more?</a>
                     </div>
                 </div>
-                <div class="box">
+                <div className="box">
                     <span></span>
-                    <div class="content">
-                        <div class="flex flex-row justify-around items-center mb-4">
-                            <img src={nodejs} alt="" class="w-24 h-20"/>
+                    <div className="content">
+                        <div className="flex flex-row justify-around items-center mb-4">
+                            <img src={nodejs} alt="" className="w-24 h-20"/>
                             <h2>NodeJs</h2>
                         </div>
                         <p>
@@ -38,11 +40,11 @@ const Skills = () => {
                         <a href="https://nodejs.org/">Want to know more?</a>
                     </div>
                 </div>
-                <div class="box">
+                <div className="box">
                     <span></span>
-                    <div class="content">
-                        <div class="flex flex-row justify-around items-center mb-4">
-                            <img src={reactjs} alt="" class="w-24 h-20"/>
+                    <div className="content">
+                        <div className="flex flex-row justify-around items-center mb-4">
+                            <img src={reactjs} alt="" className="w-24 h-20"/>
                             <h2>ReactJs</h2>
                         </div>
                         <p>
@@ -51,11 +53,11 @@ const Skills = () => {
                         <a href="https://reactjs.org/">Want to know more?</a>
                     </div>
                 </div>
-                <div class="box">
+                <div className="box">
                     <span></span>
-                    <div class="content">
-                        <div class="flex flex-row justify-around items-center mb-4">
-                            <img src={tailwindcss} alt="" class="w-24 h-20"/>
+                    <div className="content">
+                        <div className="flex flex-row justify-around items-center mb-4">
+                            <img src={tailwindcss} alt="" className="w-24 h-20"/>
                             <h2>TailwindCSS</h2>
                         </div>
                         <p>
@@ -64,11 +66,11 @@ const Skills = () => {
                         <a href="https://tailwindcss.com/">Want to know more?</a>
                     </div>
                 </div>
-                <div class="box">
+                <div className="box">
                     <span></span>
-                    <div class="content">
-                        <div class="flex flex-row justify-around items-center mb-4">
-                            <img src={sass} alt="" class="w-20 h-20"/>
+                    <div className="content">
+                        <div className="flex flex-row justify-around items-center mb-4">
+                            <img src={sass} alt="" className="w-20 h-20"/>
                             <h2>Sass</h2>
                         </div>
                         <p>
@@ -77,11 +79,11 @@ const Skills = () => {
                         <a href="https://sass-lang.com/">Want to know more?</a>
                     </div>
                 </div>
-                <div class="box">
+                <div className="box">
                     <span></span>
-                    <div class="content">
-                        <div class="flex flex-row justify-around items-center mb-4">
-                            <img src={django} alt="" class="w-20 h-20"/>
+                    <div className="content">
+                        <div className="flex flex-row justify-around items-center mb-4">
+                            <img src={django} alt="" className="w-20 h-20"/>
                             <h2>Django</h2>
                         </div>
                         <p>
