@@ -3,7 +3,7 @@ import React from 'react';
 function Welcome() {
   return (
     <section id='home' className="flex flex-col items-center justify-center h-screen bg-[#000]">
-      <h1 className="text-4xl font-bold text-white mb-4">Welcome to my website!</h1>
+      <h1 className="text-4xl font-bold text-white text-center mb-4">Welcome to my website!</h1>
       <p className="text-lg text-white mx-10 my-8 text-center">
         Hello and welcome to my portfolio! I am thrilled to have you here and to share my work with you. 
         This portfolio represents my passion, creativity, and dedication to my craft. Whether you are a potential client, 
