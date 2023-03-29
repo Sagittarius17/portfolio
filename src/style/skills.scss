@@ -1,8 +1,9 @@
-.container {
+.bigbox {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 
     .box {
         position: relative;
@@ -11,7 +12,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 40px 30px;
+        margin: 0px 30px;
         transition: 0.5s;
 
         // &::before {

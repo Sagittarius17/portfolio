@@ -8,12 +8,13 @@ function showPreloader() {
     preloader.style.display = 'block';
   }
   
-  function hidePreloader() {
-    const preloader = document.getElementById('preloader');
-    preloader.style.display = 'none';
-  }
+function hidePreloader() {
+  const preloader = document.getElementById('preloader');
+  preloader.style.display = 'none';
+}
   
-  window.onload = function() {
-    hidePreloader();
-  };
+window.onload = function() {
+  hidePreloader();
+};
+  
   

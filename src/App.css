@@ -3,6 +3,10 @@
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
 
+.btn.active a {
+  border-bottom: 5px solid rgb(238, 255, 0);
+}
+
 body {
   margin: 0;
   /* 1 */
@@ -56,6 +60,7 @@ code {
 */
 
 html {
+  scroll-behavior: smooth;
   line-height: 1.5;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -559,5 +564,4 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-@import "style/loader.css";
 @import "style/skills.css";
