@@ -72,4 +72,10 @@
   50% {
     transform: translate(-10px);
   }
+}
+.logo {
+  background-image: url(../assets/images/hexaneon.gif);
+  -webkit-background-clip: text;
+  -webkit-background-size: 85px;
+  -webkit-text-fill-color: transparent;
 }/*# sourceMappingURL=skills.css.map */

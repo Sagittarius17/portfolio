@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../images/lambda.png'
+import logo from '../assets/images/lambda.png'
 
 function Navbar() {
     const scrollToSection = (id) => {
@@ -30,7 +30,7 @@ function Navbar() {
         <div>
             <nav class="fixed z-10 w-full sm:px-2 bg-white bg-opacity-10 backdrop-blur-md drop-shadow-lg">
                 <div class="flex flex-wrap justify-between items-center mx-5">
-                    <a href="https://twitter.com/shuvendusingha/" class="flex items-center">
+                    <a href="#home" class="flex items-center">
                         <img src={logo} class="mr-3 h-6 sm:h-9" alt="Logo" />
                         <span class="flex self-center text-2xl font-semibold whitespace-nowrap dark:text-purple-300">
                             <h1 class="self-center text-2xl font-semibold whitespace-nowrap dark:text-yellow-400">Shuvendu</h1>

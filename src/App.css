@@ -2,12 +2,33 @@
 1. Remove the margin in all browsers.
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
+/*scrollbar*/
+::-webkit-scrollbar {
+  width: 0.5em;
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+}
+::-webkit-scrollbar-thumb {
+  background-image: url(./assets/images/ripple.gif);
+  background-position: center;
+  border: .5px solid grey;
+  border-radius: 100vh;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(48, 189, 119);
+}
 
 .btn.active a {
   border-bottom: 5px solid rgb(238, 255, 0);
 }
 
 body {
+  background: repeating-linear-gradient(90deg, red, green, blue);
+  background-repeat: repeat-x;
+  background-size: 400% 100%;
+  animation: AnimationRGB 6s linear infinite;
   margin: 0;
   /* 1 */
   line-height: inherit;
@@ -19,6 +40,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* @keyframes AnimationRGB {
+  0%{background-position:100% 50%}
+  100%{background-position:-33% 50%}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

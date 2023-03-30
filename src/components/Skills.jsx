@@ -1,16 +1,16 @@
 import React from 'react'
-import python from '../images/python.png'
-import nodejs from '../images/nodeJS.png'
-import reactjs from '../images/reactjs.png'
-import tailwindcss from '../images/tailwindcss.png'
-import sass from '../images/sass.png'
-import django from '../images/django.png'
+import python from '../assets/images/python.png'
+import nodejs from '../assets/images/nodejs.png'
+import reactjs from '../assets/images/reactjs.png'
+import tailwindcss from '../assets/images/tailwindcss.png'
+import sass from '../assets/images/sass.png'
+import django from '../assets/images/django.png'
 import "../style/skills.css"
 
 const Skills = () => {
     return (
         <div id='skills' className="pt-[70px]">
-            <h2 className="flex sm:flex text-4xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">SKILLS</h2>
+            <h2 className="logo flex sm:flex text-6xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">SKILLS</h2>
             <div className="bigbox">
                 <div className="box">
                     <span></span>
