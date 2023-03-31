@@ -16,7 +16,7 @@ const Skills = () => {
                     <span></span>
                     <div className="content">
                         <div className="flex flex-row justify-around items-center mb-4">
-                            <img src={python} alt="" className="w-20 h-20"/>
+                            <img src={python} alt="" className="w-20 h-18"/>
                             <h2>Python</h2>
                         </div>
                         <p>

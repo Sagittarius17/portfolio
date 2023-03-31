@@ -1,3 +1,11 @@
+nav {
+    max-height: 70px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
 nav.expanded ul li a {
     display: block;
     font-size: 20px;
