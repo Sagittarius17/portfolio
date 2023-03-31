@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../assets/images/lambda.png'
+// import "../style/navbar.css"
 
 function Navbar() {
     const scrollToSection = (id) => {
@@ -10,6 +11,7 @@ function Navbar() {
     };
     const menuHighlight = (event) => {
         // Remove border from all menu items
+
         const menuItems = document.getElementsByClassName('btn');
         for (let i = 0; i < menuItems.length; i++) {
             menuItems[i].classList.remove('active');
@@ -18,13 +20,15 @@ function Navbar() {
         // Apply border to clicked menu item
         const menuItem = event.target.closest('.btn');
         menuItem.classList.add('active');
-    };
-    // Mobile view menu open/close
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
     };
+
+    // Mobile view menu open/close
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleNavbar = () => {
+        setIsExpanded(!isExpanded);
+    }
 
     return (
         <div>
@@ -38,13 +42,13 @@ function Navbar() {
                         </span>
                     </a>
                     <div class="flex">
-                        <button data-collapse-toggle="#nav_menu" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
+                        <button data-collapse-toggle="#nav_menu" onClick={toggleNavbar} type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
                             <span class="sr-only">Open menu</span>
                             <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                         </button>
                     </div>
                     <div id="nav_menu" class="flex w-full md:w-auto">
-                        <ul class="flex flex-col h-[70px] items-center md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium justify-start">
+                        <ul class="flex lg:flex-row lg:h-[70px] lg:items-center lg:justify-start lg:left-0 sm:relative sm:left-[77%] sm:flex-col sm:space-x-8 sm:mt-0 sm:leading-9 sm:font-medium sm:items-end ">
                             <li class="btn">
                                 <a href="#home" onClick={(event) => menuHighlight(event)} class="block text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white 
                                 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
