@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import logo from "../assets/images/lambda.png";
-import "../style/navbar.css"
 
 function Navbar() {
     const scrollToSection = (id) => {
