@@ -16,15 +16,19 @@ const Welcome = () => {
 
   useEffect(() => {
     const id = uuidv4(); // Generate a unique ID using a library like 'uuid'
-    setViewedIds([...viewedIds, id]);
-    localStorage.setItem("viewedIds", JSON.stringify([...viewedIds, id]));
-    setViewCount(viewedIds.length + 1);
-  }, []);
+    setViewedIds(prevViewedIds => {
+      const newViewedIds = [...prevViewedIds, id];
+      localStorage.setItem("viewedIds", JSON.stringify(newViewedIds));
+      setViewCount(newViewedIds.length);
+      return newViewedIds;
+    });
+  }, [setViewCount, setViewedIds]);
+  
 
 
   return (
     <section id='home' className="flex flex-col items-center justify-center h-screen pt-[70px] bg-[#000]">
-      <h2 className="flex relative w-[100%] -top-[247px] text-4xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">WELCOME</h2>
+      <h2 className="flex relative w-[100%] -top-[165px] text-4xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">WELCOME</h2>
       <div className="text-black w-[100%] font-bold border-2 border-solid border-white text-center bg-green-500 p-2">Portfolio viewed {viewCount} times.</div>;
       <div className="">
         <h1 className='relative bottom-[205px] text-[#ff3030] text-center'>&#9888; This website is under construction!</h1>
