@@ -27,13 +27,14 @@ const Welcome = () => {
 
 
   return (
-    <section id='home' className="flex flex-col items-center justify-center h-screen pt-[70px] bg-[#000]">
-      <h2 className="flex relative w-[100%] -top-[165px] text-4xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">WELCOME</h2>
-      <div className="text-black w-[100%] font-bold border-2 border-solid border-white text-center bg-green-500 p-2">Portfolio viewed {viewCount} times.</div>;
-      <div className="">
-        <h1 className='relative bottom-[205px] text-[#ff3030] text-center'>&#9888; This website is under construction!</h1>
-        <h1 className='relative bottom-[205px] text-[#ff3030] text-center'>&#9888; Please use laptop browser or active desktop-mode on mobile for better view!</h1>
-        <p className="text-lg sm:overflow-hidden text-white text-center mx-28">
+    <section id='home' className="flex flex-col items-center justify-center h-screen md:h-screen bg-[#000]">
+      {/* <h2 className="flex relative w-[100%] -top-[165px] text-4xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">WELCOME</h2> */}
+      <h1 className="flex relative w-[100%] bottom-[125px] text-6xl text-white justify-center font-bold">WELCOME</h1>
+      <div className="relative text-black w-[100%] bottom-[120px] font-bold border-2 border-solid border-white text-center bg-green-500 lg:p-2 p-0">You viewed this webpage {viewCount} times.</div>;
+      <div className="m-0 p-0">
+        <h1 className='relative bottom-[10px] text-[#ff3030] text-center'>&#9888; This website is under construction!</h1>
+        <h1 className='relative bottom-[10px] text-[#ff3030] text-center'>&#9888; Please use laptop browser or active desktop-mode on mobile for better view!</h1>
+        <p className="lg:text-base text-sm text-white text-center lg:mx-28 mx-2">
           Hello and welcome to my portfolio! I am thrilled to have you here and to share my work with you.
           This portfolio represents my passion, creativity, and dedication to my craft. Whether you are a potential client,
           colleague, friends or just curious about my work, I hope that you will find this portfolio informative and engaging.

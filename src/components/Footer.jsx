@@ -65,7 +65,7 @@ function Footer() {
                         <span className="sr-only">Twitter account</span>
                     </a>
                 </div>
-                <div classNameName="flex lg:pr-[350px]">
+                <div className="flex lg:pr-[350px]">
                     <a href="#" className="flex items-center m-2 sm:flex-row">
                         <img src={logo} className="w-6 h-6 mt-2 mr-2 sm:mr-2 sm:mt-2" />
                         <span className="my-4 mb-2 text-sm sm:justify-center text-gray-500 sm:text-center dark:text-white">© 2023 <a href="https://google.com/" className="hover:underline text-white">PortFolio</a>. Sob Rights Amar.</span>

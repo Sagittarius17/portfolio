@@ -2,7 +2,7 @@ import React from "react";
 
 function PastWork() {
   return (
-    <section id="pastworks" className="pt-[70px]">
+    <section id="pastworks" className="pt-[69px]">
       <h2 className="flex sm:flex text-4xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">PAST WORK EX.</h2>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="my-12">

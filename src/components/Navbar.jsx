@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/images/lambda.png";
 
-function Navbar() {
+const Navbar = () => {
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
@@ -10,12 +10,10 @@ function Navbar() {
     };
     const menuHighlight = (event) => {
         // Remove border from all menu items
-
         const menuItems = document.getElementsByClassName("btn");
         for (let i = 0; i < menuItems.length; i++) {
             menuItems[i].classList.remove("active");
         }
-
         // Apply border to clicked menu item
         const menuItem = event.target.closest(".btn");
         menuItem.classList.add("active");
@@ -30,7 +28,7 @@ function Navbar() {
     };
 
     return (
-        <nav className="fixed z-10 sm:w-full sm:px-2 bg-white bg-opacity-10 backdrop-blur-md drop-shadow-lg">
+        <nav className="fixed z-10 lg:w-full w-full sm:px-2 bg-white bg-opacity-10 backdrop-blur-md drop-shadow-lg">
             <div className="flex flex-wrap justify-between items-center mx-5">
                 <a href="#home" className="flex relative lg:bottom-0 md:bottom-[40px] items-center">
                     <img src={logo} className="mr-3 h-6 sm:h-9" alt="Logo" />

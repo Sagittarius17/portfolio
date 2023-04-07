@@ -9,7 +9,7 @@ import "../style/skills.css"
 
 const Skills = () => {
     return (
-        <div id='skills' className="pt-[70px]">
+        <div id='skills' className="pt-[69px]">
             <h2 className="logo flex sm:flex text-6xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">SKILLS</h2>
             <div className="bigbox">
                 <div className="box">
