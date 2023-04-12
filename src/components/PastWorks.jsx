@@ -32,14 +32,10 @@ function PastWork() {
                 This was a great learning experience for me as I was able to understand how the framework works and how to use it to build efficient and dynamic web applications.
               </p>
               <p className="mt-2 text-gray-600">
-                Over the past six months, I had the opportunity to work as an intern in a tech company. 
-                During this time, I was able to gain hands-on experience in a wide range of technologies, 
-                including PHP Laravel, jQuery, Bootstrap, Vue.js, Python, Selenium, and automation.
+                
               </p>
               <p className="mt-2 text-gray-600">
-                Over the past six months, I had the opportunity to work as an intern in a tech company. 
-                During this time, I was able to gain hands-on experience in a wide range of technologies, 
-                including PHP Laravel, jQuery, Bootstrap, Vue.js, Python, Selenium, and automation.
+
               </p>
 
             </div>
