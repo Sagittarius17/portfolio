@@ -32,10 +32,10 @@ function PastWork() {
                 This was a great learning experience for me as I was able to understand how the framework works and how to use it to build efficient and dynamic web applications.
               </p>
               <p className="mt-2 text-gray-600">
-                
-              </p>
-              <p className="mt-2 text-gray-600">
-
+                During my internship, I gained valuable experience in using Python for automation. I learned how to write efficient and effective 
+                scripts to automate tasks such as data extraction, testing, and reporting. This allowed me to save significant time and resources, and greatly improve 
+                the efficiency of the projects I worked on. My experience with Python automation has provided me with a valuable skillset that I can apply to a wide 
+                range of industries and roles.
               </p>
 
             </div>
