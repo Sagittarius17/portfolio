@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf';
-import pythonCertificate from '../assets/python-certificate.pdf'
+import PdfViewer from 'react-pdf';
+// import pythonCertificate from '../assets/python-certificate.pdf'
 
 function PastWork() {
 
+  const pdfFile = '../assets/python-certificate.pdf';
   const [showPdf, setShowPdf] = useState(false);
 
   const togglePdf = () => {
@@ -28,9 +29,7 @@ function PastWork() {
               </button>
               {showPdf && (
                 <div>
-                  <Document file={pythonCertificate}>
-                    <Page pageNumber={1} width={500} />
-                  </Document>
+                  <PdfViewer file={pdfFile} />
                 </div>
               )}
             </div>
