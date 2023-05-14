@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import PdfViewer from 'react-pdf';
-// import pythonCertificate from '../assets/python-certificate.pdf'
+// import PdfViewer from 'react-pdf';
+import pythonCertificate from '../assets/resume.jpeg'
 
 function PastWork() {
 
-  const pdfFile = '../assets/python-certificate.pdf';
+  // const pdfFile = '../assets/python-certificate.pdf';
   const [showPdf, setShowPdf] = useState(false);
 
   const togglePdf = () => {
@@ -23,13 +23,13 @@ function PastWork() {
               src="https://via.placeholder.com/300x200.png?text=Project+1"
               alt="Project 1"
             /> */}
-            <div>
-              <button onClick={togglePdf}>
-                {showPdf ? 'Hide PDF' : 'Show PDF'}
+            <div className='flex flex-col justify-center'>
+              <button onClick={togglePdf} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+                {showPdf ? 'Hide Internship Certificate' : 'Show Internship Certificate'}
               </button>
               {showPdf && (
-                <div>
-                  <PdfViewer file={pdfFile} />
+                <div className='flex justify-center'>
+                  <img src={pythonCertificate} alt="resume" className=''/>
                 </div>
               )}
             </div>
