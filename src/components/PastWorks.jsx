@@ -51,9 +51,9 @@ function PastWork() {
                 Later on, I had the opportunity to learn and work with Vue.js, a popular frontend framework for building interactive web applications.
                 This was a great learning experience for me as I was able to understand how the framework works and how to use it to build efficient and dynamic web applications.
               </p>
-              <p className="mt-2 text-gray-600">
+              <p className="mt-2 text-gray-600 font-semibold">
                 During my internship, I gained valuable experience in using Python for automation. I learned how to write efficient and effective
-                scripts to automate tasks such as data extraction, testing, and reporting. This allowed me to save significant time and resources, and greatly improve
+                scripts to automate tasks such as data extraction, data entry, sign in, log in, online payment, testing, and reporting. This allowed me to save significant time and resources, and greatly improve
                 the efficiency of the projects I worked on. My experience with Python automation has provided me with a valuable skillset that I can apply to a wide
                 range of industries and roles.
               </p>
