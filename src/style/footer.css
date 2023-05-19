@@ -1,15 +1,15 @@
-.blink {
-    animation: blink-animation 1s steps(5, start) infinite;
-    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+@keyframes blinkAnimation {
+  0% {
+    opacity: 0;
   }
-  @keyframes blink-animation {
-    to {
-      visibility: hidden;
-    }
+  50% {
+    opacity: 1;
   }
-  @-webkit-keyframes blink-animation {
-    to {
-      visibility: hidden;
-    }
+  100% {
+    opacity: 0;
   }
-  
+}
+
+.section-blink {
+  animation: blinkAnimation 1s infinite;
+}
