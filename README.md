@@ -1,1 +1,1 @@
-This is a portfolio webpage.
+This is a portfolio webpage. Created with reactjs and tailwindcss.
