@@ -1,0 +1,15 @@
+@keyframes blinkAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.section-blink {
+  animation: blinkAnimation 1s infinite;
+}

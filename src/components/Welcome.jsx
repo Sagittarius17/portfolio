@@ -47,7 +47,7 @@ const Welcome = () => {
           Hello and welcome to my portfolio! I am thrilled to have you here and to share my work with you.
           This portfolio represents my passion, creativity, and dedication to my craft. Whether you are a potential client,
           colleague, friends or just curious about my work, I hope that you will find this portfolio informative and engaging.
-          Thank you for taking the time to visit, and I look forward to connecting with you soon.
+          Thank you for taking the time to visit, and I look forward to  <a href="#social_handles" onclick="playAnimation()" className='text-fuchsia-500'>connect</a> with you.
         </p>
       </div>
     </section>
