@@ -6,7 +6,7 @@
 function showPreloader() {
     const preloader = document.getElementById('preloader');
     preloader.style.display = 'block';
-  }
+}
   
 function hidePreloader() {
   const preloader = document.getElementById('preloader');

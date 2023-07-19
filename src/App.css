@@ -17,7 +17,7 @@
   border-radius: 100vh;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(48, 189, 119);
+  background: rgb(255, 255, 255);
 }
 
 .btn.active a {
@@ -25,6 +25,7 @@
 }
 
 body {
+  cursor: url('assets/images/cursor.png') 5 5, auto;
   background: repeating-linear-gradient(90deg, red, green, blue);
   background-repeat: repeat-x;
   background-size: 400% 100%;
