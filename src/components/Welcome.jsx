@@ -39,6 +39,7 @@ const Welcome = () => {
   return (
     <section id='home' className="flex flex-col items-center justify-center h-screen pt-[69px] bg-[#000]">
       {/* <h2 className="flex relative w-[100%] -top-[165px] text-4xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">WELCOME</h2> */}
+      {/* <h2 className="flex relative w-[100%] -top-[165px] text-4xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">WELCOME</h2> */}
       <WebsiteVisitorCounter />
       <div className="">
         <h1 className='relative bottom-[205px] text-[#ff3030] text-center'>&#9888; This website is under construction, Please use laptop browser or active desktop-mode on mobile for better view! &#9888;</h1>
