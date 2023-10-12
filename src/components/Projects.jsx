@@ -8,7 +8,6 @@ function Projects() {
                 
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                     <img src="https://github.com/Sagittarius17.png" alt="Project 1" className="w-full h-48 object-cover" />
-                    <img src="https://github.com/Sagittarius17.png" alt="Project 1" className="w-full h-48 object-cover" />
                     <div className="p-4">
                         <h3 className="text-lg font-bold mb-2">Chatroom</h3>
                         <p className="text-gray-700"></p>
