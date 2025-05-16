@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.scroll-section {
+    scroll-margin-top: 60px; /* Adjust to your navbar height */
+  }
