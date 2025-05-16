@@ -12,15 +12,14 @@ app.use(cors());
 app.use(express.json());
 
 // Import routes
+const authRoutes = require('./routes/authRoutes');
 const projectRoutes = require('./routes/projectRoutes');
 const messageRoutes = require('./routes/messageRoutes');
-// Add authentication route if needed (e.g., authRoutes)
-// const authRoutes = require('./routes/authRoutes');
 
 // Use routes
+app.use('/api/auth', authRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/messages', messageRoutes);
-// app.use('/api/auth', authRoutes);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })

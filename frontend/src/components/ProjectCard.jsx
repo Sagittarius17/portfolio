@@ -1,6 +1,6 @@
 const ProjectCard = ({ project }) => {
     return (
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="bg-white text-black shadow-lg rounded-lg overflow-hidden">
         <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover" />
         <div className="p-4">
           <h2 className="text-xl font-semibold">{project.title}</h2>

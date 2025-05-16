@@ -1,12 +1,45 @@
+import React from 'react';
+import About from './About';
+import Projects from './Projects';
+import Contact from './Contact';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 const Home = () => {
-    return (
-      <div className="text-center py-10">
-        <img src="/profile.jpg" alt="Profile" className="mx-auto w-32 h-32 rounded-full" />
-        <h1 className="text-3xl font-bold mt-4">Hi, I'm a Full Stack Developer</h1>
-        <p className="text-gray-600 mt-2">I build modern web apps with MERN stack and Tailwind CSS.</p>
-      </div>
-    );
-  };
-  
-  export default Home;
-  
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
+  return (
+    <div className="scroll-smooth text-white">
+      <section id="home" className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Hi, I'm [Your Name]</h1>
+          <p className="text-lg md:text-xl">I'm a Full Stack Developer.</p>
+        </div>
+      </section>
+
+      <section id="about" className="scroll-section min-h-screen bg-gray-800">
+        <About />
+      </section>
+
+      <section id="projects" className="scroll-section min-h-screen bg-gray-600">
+        <Projects />
+      </section>
+
+      <section id="contact" className="scroll-section min-h-screen bg-gray-800">
+        <Contact />
+      </section>
+    </div>
+  );
+};
+
+export default Home;

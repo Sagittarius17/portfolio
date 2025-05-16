@@ -19,7 +19,7 @@ const Register = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/register', {
+      const res = await fetch('http://localhost:5000/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -38,7 +38,7 @@ const Register = () => {
   };
 
   return (
-    <div className="absolute top-[40%] left-[38%] max-w-md mx-auto p-6 border rounded shadow">
+    <div className="bg-white text-black absolute lg:top-[40%] lg:left-[38%] top-[25%] left-[10%] w-[80%] max-w-md mx-auto p-6 border rounded shadow">
       <h2 className="text-2xl font-bold mb-4 text-center">Register</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -62,7 +62,7 @@ const Register = () => {
         <input
           type="password"
           name="password"
-          placeholder="Password (min 6 characters)"
+          placeholder="Password (min 8 characters)"
           value={form.password}
           onChange={handleChange}
           className="w-full p-2 border rounded"
@@ -73,6 +73,9 @@ const Register = () => {
         </button>
         {error && <p className="text-red-500 text-sm">{error}</p>}
       </form>
+      <p className="text-center text-sm mt-4">
+        Already have an account? <a href="/login" className="text-blue-600 hover:underline">Login</a>
+      </p>
     </div>
   );
 };

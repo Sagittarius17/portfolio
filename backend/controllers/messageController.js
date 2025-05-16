@@ -1,29 +1,44 @@
 const Message = require('../models/Message');
 
-// GET all messages (for admin)
+// GET all messages (Admin)
 exports.getMessages = async (req, res) => {
   try {
     const messages = await Message.find().sort({ createdAt: -1 });
-    res.json(messages);
+    res.status(200).json(messages);
   } catch (err) {
-    res.status(500).json({ message: 'Server Error' });
+    res.status(500).json({ message: 'Failed to fetch messages.' });
   }
 };
 
-// POST a message from contact form
+// POST a new message (Contact Form)
 exports.createMessage = async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
-      return res.status(400).json({ message: 'All fields are required' });
+      return res.status(400).json({ message: 'All fields are required.' });
     }
 
     const newMessage = new Message({ name, email, message });
     await newMessage.save();
 
-    res.status(201).json({ message: 'Message sent successfully' });
+    res.status(201).json({ message: 'Message sent successfully.' });
   } catch (err) {
-    res.status(500).json({ message: 'Failed to send message' });
+    res.status(500).json({ message: 'Failed to send message.' });
+  }
+};
+
+// DELETE a message (Admin)
+exports.deleteMessage = async (req, res) => {
+  try {
+    const deleted = await Message.findByIdAndDelete(req.params.id);
+
+    if (!deleted) {
+      return res.status(404).json({ message: 'Message not found.' });
+    }
+
+    res.status(200).json({ message: 'Message deleted successfully.' });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to delete message.' });
   }
 };
