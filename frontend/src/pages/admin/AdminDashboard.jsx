@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import AdminAbout from './adminAbout';
 
-const API = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
 
 const AdminDashboard = () => {
     const [projects, setProjects] = useState([]);
     const [messages, setMessages] = useState([]);
-    const [form, setForm] = useState({
-        title: '',
-        description: '',
-        imageUrl: '',
-        githubLink: '',
-        demoLink: '',
-    });
+    const [form, setForm] = useState({ title: '', description: '', imageUrl: '', githubLink: '', demoLink: '', });
     const [editId, setEditId] = useState(null);
 
     // Fetch all projects and messages
@@ -21,13 +16,14 @@ const AdminDashboard = () => {
         fetchMessages();
     }, []);
 
+
     const fetchProjects = async () => {
-        const res = await axios.get(`${API}/api/projects`);
+        const res = await axios.get(`${BASE_URL}/api/projects`);
         setProjects(res.data);
     };
 
     const fetchMessages = async () => {
-        const res = await axios.get(`${API}/api/messages`);
+        const res = await axios.get(`${BASE_URL}/api/messages`);
         setMessages(res.data);
     };
 
@@ -39,9 +35,9 @@ const AdminDashboard = () => {
         e.preventDefault();
 
         if (editId) {
-            await axios.put(`${API}/api/projects/${editId}`, form);
+            await axios.put(`${BASE_URL}/api/projects/${editId}`, form);
         } else {
-            await axios.post(`${API}/api/projects`, form);
+            await axios.post(`${BASE_URL}/api/projects`, form);
         }
 
         setForm({ title: '', description: '', imageUrl: '', githubLink: '', demoLink: '' });
@@ -61,12 +57,12 @@ const AdminDashboard = () => {
     };
 
     const handleDelete = async (id) => {
-        await axios.delete(`${API}/api/projects/${id}`);
+        await axios.delete(`${BASE_URL}/api/projects/${id}`);
         fetchProjects();
     };
 
     const handleDeleteMessage = async (id) => {
-        await axios.delete(`${API}/api/messages/${id}`);
+        await axios.delete(`${BASE_URL}/api/messages/${id}`);
         fetchMessages();
     };
 
@@ -88,6 +84,9 @@ const AdminDashboard = () => {
                     </button>
                 </form>
             </div>
+
+            {/* About Section */}
+            < AdminAbout />
 
             {/* Projects List */}
             <div className="mb-10 bg-white p-4 rounded">

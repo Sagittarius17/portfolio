@@ -7,6 +7,8 @@ import { useLocation } from 'react-router-dom';
 
 const Home = () => {
   const location = useLocation();
+  const username = localStorage.getItem('username');
+  console.log("username", username)
 
   useEffect(() => {
     if (location.hash) {
@@ -22,7 +24,7 @@ const Home = () => {
     <div className="scroll-smooth text-white">
       <section id="home" className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Hi, I'm [Your Name]</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Hi, I'm {username}</h1>
           <p className="text-lg md:text-xl">I'm a Full Stack Developer.</p>
         </div>
       </section>

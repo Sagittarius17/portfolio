@@ -61,16 +61,16 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex gap-5 items-center">
-          <Link to="/#home" smooth={true} duration={500} className="cursor-pointer hover:text-blue-400">
+          <Link to="/#home" smooth="true" duration={500} className="cursor-pointer hover:text-blue-400">
             Home
           </Link>
-          <Link to="/#about" smooth={true} duration={500} className="cursor-pointer hover:text-blue-400">
+          <Link to="/#about" smooth="true" duration={500} className="cursor-pointer hover:text-blue-400">
             About
           </Link>
-          <Link to="/#projects" smooth={true} duration={500} className="cursor-pointer hover:text-blue-400">
+          <Link to="/#projects" smooth="true" duration={500} className="cursor-pointer hover:text-blue-400">
             Projects
           </Link>
-          <Link to="/#contact" smooth={true} duration={500} className="cursor-pointer hover:text-blue-400">
+          <Link to="/#contact" smooth="true" duration={500} className="cursor-pointer hover:text-blue-400">
             Contact
           </Link>
 

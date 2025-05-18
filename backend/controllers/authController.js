@@ -1,11 +1,11 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import User from '../models/User.js';
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
 // @desc    Register new user
-exports.register = async (req, res) => {
+export const register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
@@ -33,29 +33,24 @@ exports.register = async (req, res) => {
   }
 };
 
-// @desc    Login user
-exports.login = async (req, res) => {
+export const login = async (req, res) => {
+  const { username, password } = req.body;
+
   try {
-    const { username, password } = req.body;
-
-    // Validation
-    if (!username || !password) {
-      return res.status(400).json({ message: 'All fields are required' });
-    }
-
-    // Find user
     const user = await User.findOne({ username });
-    if (!user) return res.status(404).json({ message: 'User not found' });
+    if (!user)
+      return res.status(401).json({ message: 'Invalid email or password' });
 
-    // Compare password
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(401).json({ message: 'Invalid credentials' });
+    if (!isMatch)
+      return res.status(401).json({ message: 'Invalid email or password' });
 
-    // Generate JWT
-    const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: '2h' });
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: '1d',
+    });
 
-    res.json({ token, username: user.username });
-  } catch (err) {
-    res.status(500).json({ message: 'Server error during login' });
+    res.status(200).json({ token, username: user.username });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
   }
 };

@@ -1,7 +1,7 @@
-const Project = require('../models/Project');
+import Project from '../models/Project.js';
 
 // GET all projects (sorted by newest first)
-exports.getProjects = async (req, res) => {
+export const getProjects = async (req, res) => {
   try {
     const projects = await Project.find().sort({ createdAt: -1 });
     res.status(200).json(projects);
@@ -11,7 +11,7 @@ exports.getProjects = async (req, res) => {
 };
 
 // POST create a new project
-exports.createProject = async (req, res) => {
+export const createProject = async (req, res) => {
   try {
     const { title, description, imageUrl, githubLink, demoLink } = req.body;
 
@@ -29,7 +29,7 @@ exports.createProject = async (req, res) => {
 };
 
 // PUT update project
-exports.updateProject = async (req, res) => {
+export const updateProject = async (req, res) => {
   try {
     const { title, description, imageUrl, githubLink, demoLink } = req.body;
 
@@ -50,7 +50,7 @@ exports.updateProject = async (req, res) => {
 };
 
 // DELETE a project
-exports.deleteProject = async (req, res) => {
+export const deleteProject = async (req, res) => {
   try {
     const deletedProject = await Project.findByIdAndDelete(req.params.id);
 

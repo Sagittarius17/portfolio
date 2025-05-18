@@ -1,11 +1,9 @@
-const express = require('express');
+import express from 'express';
+import { createMessage, getMessages } from '../controllers/messageController.js';
+
 const router = express.Router();
-const messageController = require('../controllers/messageController');
 
-// Create a new message via contact form
-router.post('/', messageController.createMessage);
+router.post('/', createMessage);
+router.get('/', getMessages);
 
-// Optional: Get all messages (for admin dashboard)
-router.get('/', messageController.getMessages);
-
-module.exports = router;
+export default router;

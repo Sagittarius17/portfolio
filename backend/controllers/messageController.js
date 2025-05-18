@@ -1,7 +1,7 @@
-const Message = require('../models/Message');
+import Message from '../models/Message.js';
 
 // GET all messages (Admin)
-exports.getMessages = async (req, res) => {
+export const getMessages = async (req, res) => {
   try {
     const messages = await Message.find().sort({ createdAt: -1 });
     res.status(200).json(messages);
@@ -11,7 +11,7 @@ exports.getMessages = async (req, res) => {
 };
 
 // POST a new message (Contact Form)
-exports.createMessage = async (req, res) => {
+export const createMessage = async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
@@ -29,7 +29,7 @@ exports.createMessage = async (req, res) => {
 };
 
 // DELETE a message (Admin)
-exports.deleteMessage = async (req, res) => {
+export const deleteMessage = async (req, res) => {
   try {
     const deleted = await Message.findByIdAndDelete(req.params.id);
 
