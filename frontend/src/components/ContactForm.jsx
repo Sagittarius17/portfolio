@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const ContactForm = () => {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setContactForm({ ...contactForm, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -18,7 +18,7 @@ const ContactForm = () => {
 
     if (res.ok) {
       setStatus('Message sent!');
-      setForm({ name: '', email: '', message: '' });
+      setContactForm({ name: '', email: '', message: '' });
     } else {
       setStatus('Failed to send message.');
     }
@@ -29,7 +29,7 @@ const ContactForm = () => {
       <input
         type="text"
         name="name"
-        value={form.name}
+        value={contactForm.name}
         onChange={handleChange}
         placeholder="Your Name"
         className="w-full p-2 border rounded"
@@ -38,7 +38,7 @@ const ContactForm = () => {
       <input
         type="email"
         name="email"
-        value={form.email}
+        value={contactForm.email}
         onChange={handleChange}
         placeholder="Your Email"
         className="w-full p-2 border rounded"
@@ -46,7 +46,7 @@ const ContactForm = () => {
       />
       <textarea
         name="message"
-        value={form.message}
+        value={contactForm.message}
         onChange={handleChange}
         placeholder="Your Message"
         className="w-full p-2 border rounded"

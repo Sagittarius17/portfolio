@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [form, setForm] = useState({ username: '', password: '' });
+  const [loginForm, setLoginForm] = useState({ username: '', password: '' });
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -18,7 +18,7 @@ const Login = () => {
       const res = await fetch('http://localhost:5000/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify(loginForm),
       });
 
       const data = await res.json();
@@ -42,7 +42,7 @@ const Login = () => {
           type="text"
           name="username"
           placeholder="Username"
-          value={form.username}
+          value={loginForm.username}
           onChange={handleChange}
           className="w-full p-2 border rounded"
           required
@@ -51,7 +51,7 @@ const Login = () => {
           type="password"
           name="password"
           placeholder="Password"
-          value={form.password}
+          value={loginForm.password}
           onChange={handleChange}
           className="w-full p-2 border rounded"
           required

@@ -5,7 +5,7 @@ const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
 
 function AdminAbout() {
     const [editAbout, setEditAbout] = useState(null);
-    const [about, setAbout] = useState({
+    const [aboutForm, setAboutForm] = useState({
         name: '',
         age: '',
         address: '',
@@ -26,7 +26,7 @@ function AdminAbout() {
             const res = await axios.get(`${BASE_URL}/api/about`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
-            setAbout({
+            setAboutForm({
                 ...res.data,
                 languages: Array.isArray(res.data.languages)
                     ? res.data.languages
@@ -41,7 +41,7 @@ function AdminAbout() {
     };
 
     const handleAboutChange = (e) => {
-        setAbout({ ...about, [e.target.name]: e.target.value });
+        setAboutForm({ ...aboutForm, [e.target.name]: e.target.value });
     };
 
     const handleAboutSubmit = async (e) => {
@@ -50,11 +50,11 @@ function AdminAbout() {
 
         try {
             if (editAbout) {
-                await axios.put(`${BASE_URL}/api/about/${editAbout}`, about, {
+                await axios.put(`${BASE_URL}/api/about/${editAbout}`, aboutForm, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
             } else {
-                await axios.post(`${BASE_URL}/api/about`, about, {
+                await axios.post(`${BASE_URL}/api/about`, aboutForm, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
             }
@@ -67,21 +67,21 @@ function AdminAbout() {
     };
 
     const handleArrayChange = (section, index, field, value) => {
-        const updated = about[section].map((item, idx) =>
+        const updated = aboutForm[section].map((item, idx) =>
             idx === index ? { ...item, [field]: value } : item
         );
-        setAbout({ ...about, [section]: updated });
+        setAboutForm({ ...aboutForm, [section]: updated });
     };
 
     const addEntry = (field, emptyEntry) => {
-        setAbout((prev) => ({
+        setAboutForm((prev) => ({
             ...prev,
             [field]: [...(prev[field] || []), emptyEntry],
         }));
     };
 
     const removeEntry = (field, index) => {
-        setAbout((prev) => ({
+        setAboutForm((prev) => ({
             ...prev,
             [field]: prev[field].filter((_, i) => i !== index),
         }));
@@ -94,7 +94,7 @@ function AdminAbout() {
                 <input
                     type="text"
                     name="name"
-                    value={about.name}
+                    value={aboutForm.name}
                     onChange={handleAboutChange}
                     placeholder="Name"
                     className="p-2 border w-full rounded"
@@ -102,7 +102,7 @@ function AdminAbout() {
                 <input
                     type="number"
                     name="age"
-                    value={about.age || ''}
+                    value={aboutForm.age || ''}
                     onChange={handleAboutChange}
                     placeholder="Age"
                     className="p-2 border w-full rounded"
@@ -110,14 +110,14 @@ function AdminAbout() {
                 <input
                     type="text"
                     name="address"
-                    value={about.address}
+                    value={aboutForm.address}
                     onChange={handleAboutChange}
                     placeholder="Address"
                     className="p-2 border w-full rounded"
                 />
                 <textarea
                     name="summary"
-                    value={about.summary}
+                    value={aboutForm.summary}
                     onChange={handleAboutChange}
                     placeholder="Summary"
                     className="p-2 border w-full rounded"
@@ -126,7 +126,7 @@ function AdminAbout() {
                 {/* Education Section */}
                 <div>
                     <h4 className="font-semibold mt-4">Education</h4>
-                    {about.education.map((edu, idx) => (
+                    {aboutForm.education.map((edu, idx) => (
                         <div key={idx} className="space-y-2">
                             <input required
                                 type="text"
@@ -166,7 +166,7 @@ function AdminAbout() {
                             />
                             <button
                                 type="button"
-                                className="bg-red-500 text-white px-4 py-2 mb-4 rounded"
+                                className="bg-red-400 hover:bg-red-500 text-white px-4 py-2 mb-2 rounded"
                                 onClick={() => removeEntry('education', idx)}
                             >
                                 Remove
@@ -183,7 +183,7 @@ function AdminAbout() {
                                 endYear: '',
                             })
                         }
-                        className="bg-blue-600 text-white px-4 py-2 rounded"
+                        className="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded"
                     >
                         Add Education
                     </button>
@@ -192,7 +192,7 @@ function AdminAbout() {
                 {/* Experience Section */}
                 <div>
                     <h4 className="font-semibold mt-4">Experience</h4>
-                    {about.experience.map((exp, idx) => (
+                    {aboutForm.experience.map((exp, idx) => (
                         <div key={idx} className="space-y-2">
                             <input required
                                 type="text"
@@ -232,7 +232,7 @@ function AdminAbout() {
                             />
                             <button
                                 type="button"
-                                className="bg-red-500 text-white px-4 py-2 mb-4 rounded"
+                                className="bg-red-400 hover:bg-red-500 text-white px-4 py-2 mb-2 rounded"
                                 onClick={() => removeEntry('experience', idx)}
                             >
                                 Remove
@@ -249,7 +249,7 @@ function AdminAbout() {
                                 endYear: '',
                             })
                         }
-                        className="bg-blue-600 text-white px-4 py-2 rounded"
+                        className="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded"
                     >
                         Add Experience
                     </button>
@@ -261,8 +261,8 @@ function AdminAbout() {
                     <input
                         type="text"
                         name="languages"
-                        value={Array.isArray(about.languages) ? about.languages.join(', ') : typeof about.languages === 'string' ? about.languages : ''}
-                        onChange={(e) => setAbout({ ...about, languages: e.target.value.split(',').map((lang) => lang.trim()).filter((lang) => lang.length > 0), })}
+                        value={Array.isArray(aboutForm.languages) ? aboutForm.languages.join(', ') : typeof aboutForm.languages === 'string' ? aboutForm.languages : ''}
+                        onChange={(e) => setAboutForm({ ...aboutForm, languages: e.target.value.split(',').map((lang) => lang.trim()).filter((lang) => lang.length > 0), })}
                         placeholder="Languages (comma-separated)"
                         className="p-2 border w-full rounded"
                     />
@@ -274,14 +274,14 @@ function AdminAbout() {
                     <input
                         type="text"
                         name="hobbies"
-                        value={Array.isArray(about.hobbies) ? about.hobbies.join(', ') : typeof about.hobbies === 'string' ? about.hobbies : ''}
-                        onChange={(e) => setAbout({ ...about, hobbies: e.target.value.split(',').map((hobbies) => hobbies.trim()).filter((hobbies) => hobbies.length > 0), })}
+                        value={Array.isArray(aboutForm.hobbies) ? aboutForm.hobbies.join(', ') : typeof aboutForm.hobbies === 'string' ? aboutForm.hobbies : ''}
+                        onChange={(e) => setAboutForm({ ...aboutForm, hobbies: e.target.value.split(',').map((hobbies) => hobbies.trim()).filter((hobbies) => hobbies.length > 0), })}
                         placeholder="Hobbies (comma-separated)"
                         className="p-2 border w-full rounded"
                     />
                 </div>
 
-                <button type="submit" className="bg-blue-600 hover:bg-blue-300 text-white w-full px-4 py-2 rounded">
+                <button type="submit" className="bg-blue-400 hover:bg-blue-500 text-white w-full px-4 py-2 rounded">
                     Save About Info
                 </button>
             </form>

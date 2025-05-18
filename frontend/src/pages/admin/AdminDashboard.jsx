@@ -7,7 +7,7 @@ const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
 const AdminDashboard = () => {
     const [projects, setProjects] = useState([]);
     const [messages, setMessages] = useState([]);
-    const [form, setForm] = useState({ title: '', description: '', imageUrl: '', githubLink: '', demoLink: '', });
+    const [projectForm, setProjectForm] = useState({ title: '', description: '', imageUrl: '', githubLink: '', demoLink: '', });
     const [editId, setEditId] = useState(null);
 
     // Fetch all projects and messages
@@ -16,37 +16,28 @@ const AdminDashboard = () => {
         fetchMessages();
     }, []);
 
-
     const fetchProjects = async () => {
         const res = await axios.get(`${BASE_URL}/api/projects`);
         setProjects(res.data);
     };
-
-    const fetchMessages = async () => {
-        const res = await axios.get(`${BASE_URL}/api/messages`);
-        setMessages(res.data);
-    };
-
     const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
+        setProjectForm({ ...projectForm, [e.target.name]: e.target.value });
     };
-
-    const handleSubmit = async (e) => {
+    const handleProjectSubmit = async (e) => {
         e.preventDefault();
-
+        
         if (editId) {
-            await axios.put(`${BASE_URL}/api/projects/${editId}`, form);
+            await axios.put(`${BASE_URL}/api/projects/${editId}`, projectForm);
         } else {
-            await axios.post(`${BASE_URL}/api/projects`, form);
+            await axios.post(`${BASE_URL}/api/projects`, projectForm);
         }
-
-        setForm({ title: '', description: '', imageUrl: '', githubLink: '', demoLink: '' });
+        
+        setProjectForm({ title: '', description: '', imageUrl: '', githubLink: '', demoLink: '' });
         setEditId(null);
         fetchProjects();
     };
-
-    const handleEdit = (project) => {
-        setForm({
+    const handleProjectEdit = (project) => {
+        setProjectForm({
             title: project.title,
             description: project.description,
             imageUrl: project.imageUrl,
@@ -55,12 +46,15 @@ const AdminDashboard = () => {
         });
         setEditId(project._id);
     };
-
-    const handleDelete = async (id) => {
+    const handleProjectDelete = async (id) => {
         await axios.delete(`${BASE_URL}/api/projects/${id}`);
         fetchProjects();
     };
 
+    const fetchMessages = async () => {
+        const res = await axios.get(`${BASE_URL}/api/messages`);
+        setMessages(res.data);
+    };
     const handleDeleteMessage = async (id) => {
         await axios.delete(`${BASE_URL}/api/messages/${id}`);
         fetchMessages();
@@ -73,13 +67,13 @@ const AdminDashboard = () => {
             {/* Project Form */}
             <div className="bg-white text-black shadow p-6 rounded mb-10">
                 <h2 className="text-2xl font-semibold mb-4">{editId ? 'Edit Project' : 'Add New Project'}</h2>
-                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" name="title" value={form.title} onChange={handleChange} placeholder="Title" required className="p-2 border rounded" />
-                    <input type="text" name="imageUrl" value={form.imageUrl} onChange={handleChange} placeholder="Image URL" required className="p-2 border rounded" />
-                    <input type="text" name="githubLink" value={form.githubLink} onChange={handleChange} placeholder="GitHub Link" className="p-2 border rounded" />
-                    <input type="text" name="demoLink" value={form.demoLink} onChange={handleChange} placeholder="Demo Link" className="p-2 border rounded" />
-                    <textarea name="description" value={form.description} onChange={handleChange} placeholder="Description" required className="p-2 border rounded md:col-span-2" />
-                    <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded md:col-span-2">
+                <form onSubmit={handleProjectSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="text" name="title" value={projectForm.title} onChange={handleChange} placeholder="Title" required className="p-2 border rounded" />
+                    <input type="text" name="imageUrl" value={projectForm.imageUrl} onChange={handleChange} placeholder="Image URL" required className="p-2 border rounded" />
+                    <input type="text" name="githubLink" value={projectForm.githubLink} onChange={handleChange} placeholder="GitHub Link" className="p-2 border rounded" />
+                    <input type="text" name="demoLink" value={projectForm.demoLink} onChange={handleChange} placeholder="Demo Link" className="p-2 border rounded" />
+                    <textarea name="description" value={projectForm.description} onChange={handleChange} placeholder="Description" required className="p-2 border rounded md:col-span-2" />
+                    <button type="submit" className="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded md:col-span-2">
                         {editId ? 'Update Project' : 'Add Project'}
                     </button>
                 </form>
@@ -102,8 +96,8 @@ const AdminDashboard = () => {
                                 {project.demoLink && <a href={project.demoLink} target="_blank">Demo</a>}
                             </div>
                             <div className="flex justify-between text-sm">
-                                <button onClick={() => handleEdit(project)} className="text-yellow-600 hover:underline">Edit</button>
-                                <button onClick={() => handleDelete(project._id)} className="text-red-600 hover:underline">Delete</button>
+                                <button onClick={() => handleProjectEdit(project)} className="text-yellow-600 hover:underline">Edit</button>
+                                <button onClick={() => handleProjectDelete(project._id)} className="text-red-600 hover:underline">Delete</button>
                             </div>
                         </div>
                     ))}

@@ -14,7 +14,7 @@ const About = () => {
         fetchAbout();
     }, []);
 
-    if (!about) return <div className="text-center py-10">Sorry User Dont Want Anyone To Know About Him...😞</div>;
+    if (!about) return <div className="text-center py-10">Sorry User Dont Want Anyone To Know Anything About Him...😞</div>;
 
     return (
         <div className="max-w-3xl mx-auto py-10 px-4 text-white">

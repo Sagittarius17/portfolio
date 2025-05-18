@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  const [form, setForm] = useState({ username: '', email: '', password: '' });
+  const [registerForm, setRegisterForm] = useState({ username: '', email: '', password: '' });
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) => setRegisterForm({ ...registerForm, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const Register = () => {
       const res = await fetch('http://localhost:5000/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify(registerForm),
       });
 
       const data = await res.json();
@@ -45,7 +45,7 @@ const Register = () => {
           type="text"
           name="username"
           placeholder="Username"
-          value={form.username}
+          value={registerForm.username}
           onChange={handleChange}
           className="w-full p-2 border rounded"
           required
@@ -54,7 +54,7 @@ const Register = () => {
           type="email"
           name="email"
           placeholder="Email"
-          value={form.email}
+          value={registerForm.email}
           onChange={handleChange}
           className="w-full p-2 border rounded"
           required
@@ -63,7 +63,7 @@ const Register = () => {
           type="password"
           name="password"
           placeholder="Password (min 8 characters)"
-          value={form.password}
+          value={registerForm.password}
           onChange={handleChange}
           className="w-full p-2 border rounded"
           required
