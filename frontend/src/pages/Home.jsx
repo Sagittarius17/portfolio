@@ -1,5 +1,6 @@
 import React from 'react';
 import About from './About';
+import Skills from './Skills';
 import Projects from './Projects';
 import Contact from './Contact';
 import { useEffect } from 'react';
@@ -8,7 +9,6 @@ import { useLocation } from 'react-router-dom';
 const Home = () => {
   const location = useLocation();
   const username = localStorage.getItem('username');
-  console.log("username", username)
 
   useEffect(() => {
     if (location.hash) {
@@ -31,6 +31,10 @@ const Home = () => {
 
       <section id="about" className="scroll-section min-h-screen bg-gray-800">
         <About />
+      </section>
+
+      <section id="skills" className="scroll-section min-h-screen bg-gray-600">
+        <Skills />
       </section>
 
       <section id="projects" className="scroll-section min-h-screen bg-gray-600">

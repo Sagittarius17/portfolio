@@ -25,6 +25,7 @@ const Login = () => {
       if (res.ok) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('username', data.username);
+        localStorage.setItem('userId', data.userId);
         navigate('/admin');
       } else {
         setError(data.message || 'Login failed');

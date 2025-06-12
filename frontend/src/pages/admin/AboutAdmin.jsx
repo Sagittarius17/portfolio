@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
 
-function AdminAbout() {
+const AboutAdmin = () => {
     const [editAbout, setEditAbout] = useState(null);
     const [aboutForm, setAboutForm] = useState({
         name: '',
@@ -289,4 +289,4 @@ function AdminAbout() {
     );
 }
 
-export default AdminAbout;
+export default AboutAdmin;

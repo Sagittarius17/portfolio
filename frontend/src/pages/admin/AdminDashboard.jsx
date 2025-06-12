@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import AdminAbout from './adminAbout';
+import AboutAdmin from './AboutAdmin';
+import SkillAdmin from './SkillAdmin';
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
 
@@ -25,13 +26,13 @@ const AdminDashboard = () => {
     };
     const handleProjectSubmit = async (e) => {
         e.preventDefault();
-        
+
         if (editId) {
             await axios.put(`${BASE_URL}/api/projects/${editId}`, projectForm);
         } else {
             await axios.post(`${BASE_URL}/api/projects`, projectForm);
         }
-        
+
         setProjectForm({ title: '', description: '', imageUrl: '', githubLink: '', demoLink: '' });
         setEditId(null);
         fetchProjects();
@@ -80,7 +81,10 @@ const AdminDashboard = () => {
             </div>
 
             {/* About Section */}
-            < AdminAbout />
+            < AboutAdmin />
+
+            {/* Skills Section */}
+            <SkillAdmin /> 
 
             {/* Projects List */}
             <div className="mb-10 bg-white p-4 rounded">

@@ -7,7 +7,7 @@ const projectSchema = new mongoose.Schema({
   githubLink: { type: String },
   demoLink: { type: String },
   createdAt: { type: Date, default: Date.now },
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
 });
 
 export default mongoose.model('Project', projectSchema);

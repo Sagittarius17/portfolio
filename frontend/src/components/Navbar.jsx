@@ -67,6 +67,9 @@ const Navbar = () => {
           <Link to="/#about" smooth="true" duration={500} className="cursor-pointer hover:text-blue-400">
             About
           </Link>
+          <Link to="/#skills" smooth="true" duration={500} className="cursor-pointer hover:text-blue-400">
+            Skills
+          </Link>
           <Link to="/#projects" smooth="true" duration={500} className="cursor-pointer hover:text-blue-400">
             Projects
           </Link>
