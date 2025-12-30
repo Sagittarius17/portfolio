@@ -7,4 +7,6 @@ const skillSchema = new mongoose.Schema({
   category: { type: String, required: true }, // Optional: Frontend, Backend, etc.
 });
 
-export default mongoose.model('Skill', skillSchema);
+const Skill = mongoose.model('Skill', skillSchema);
+export default Skill;
+// This code defines a Mongoose schema for a Skill model in a Node.js application.

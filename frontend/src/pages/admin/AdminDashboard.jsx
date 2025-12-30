@@ -80,12 +80,6 @@ const AdminDashboard = () => {
                 </form>
             </div>
 
-            {/* About Section */}
-            < AboutAdmin />
-
-            {/* Skills Section */}
-            <SkillAdmin /> 
-
             {/* Projects List */}
             <div className="mb-10 bg-white p-4 rounded">
                 <h2 className="text-2xl font-semibold mb-4">Your Projects</h2>
@@ -107,6 +101,13 @@ const AdminDashboard = () => {
                     ))}
                 </div>
             </div>
+            
+            {/* About Section */}
+            < AboutAdmin />
+
+            {/* Skills Section */}
+            <SkillAdmin /> 
+
 
             {/* Contact Messages */}
             <div className='bg-white p-4 rounded'>

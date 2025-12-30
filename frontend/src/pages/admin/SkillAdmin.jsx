@@ -18,7 +18,7 @@ const SkillAdmin = () => {
       const res = await axios.get(`${BASE_URL}/api/skills`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      setSkills(res.data);
+      setSkills(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
       console.error('Failed to fetch skills:', err);
     }
@@ -69,8 +69,10 @@ const SkillAdmin = () => {
   };
 
   return (
-    <div className="bg-white text-black p-4 rounded mb-10">
+    <div className="bg-white p-4 rounded text-black mb-10">
       <h2 className="text-2xl font-semibold mb-4">Skills</h2>
+
+      {/* Skill Form */}
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <input
           type="text"
@@ -86,7 +88,7 @@ const SkillAdmin = () => {
           name="level"
           value={skillForm.level}
           onChange={handleChange}
-          placeholder="Skill Level (e.g. Intermediate)"
+          placeholder="Skill Level"
           className="p-2 border rounded"
           required
         />
@@ -95,18 +97,16 @@ const SkillAdmin = () => {
           name="category"
           value={skillForm.category}
           onChange={handleChange}
-          placeholder="Skill Category (e.g. Frontend)"
+          placeholder="Skill Category"
           className="p-2 border rounded"
           required
         />
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded md:col-span-2"
-        >
+        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded md:col-span-2">
           {editId ? 'Update Skill' : 'Add Skill'}
         </button>
       </form>
 
+      {/* Skills List */}
       <ul className="space-y-2">
         {skills.map((skill) => (
           <li

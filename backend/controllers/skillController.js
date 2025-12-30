@@ -15,18 +15,20 @@ export const getSkills = async (req, res) => {
     const skills = await Skill.find({ userId: req.userId });
     res.json(skills);
   } catch (err) {
+    console.error('Error getting skills:', err);
     res.status(500).json({ error: 'Failed to fetch skills' });
   }
 };
 
 export const createSkill = async (req, res) => {
   try {
-    const newSkill = new Skill({ ...req.body, userId: req.userId });
+    const { name, level, category } = req.body;
+    const newSkill = new Skill({ name, level, category, userId: req.user.id, });
     await newSkill.save();
     res.status(201).json(newSkill);
   } catch (err) {
     console.error('Error creating skill:', err);
-    res.status(500).json({ error: 'Failed to create skill', details: err.message });
+    res.status(500).json({ message: 'Server error', error: err.message });
   }
 };
 
@@ -39,6 +41,7 @@ export const updateSkill = async (req, res) => {
     );
     res.json(updated);
   } catch (err) {
+    console.error('Error updating skill:', err);
     res.status(500).json({ error: 'Failed to update skill' });
   }
 };
@@ -48,6 +51,7 @@ export const deleteSkill = async (req, res) => {
     await Skill.findOneAndDelete({ _id: req.params.id, userId: req.userId });
     res.json({ message: 'Skill deleted' });
   } catch (err) {
+    console.error('Error deleting skill:', err);
     res.status(500).json({ error: 'Failed to delete skill' });
   }
 };
