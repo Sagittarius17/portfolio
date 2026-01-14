@@ -1,6 +1,6 @@
 import './App.css';
 import './styles/global.css';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Navbar, Footer } from './components';
 import Hero from './components/Hero';
 import Skills from './pages/Skills';
@@ -10,8 +10,12 @@ import { ThemeContext } from './context/ThemeContext';
 const App = () => {
   const { theme } = useContext(ThemeContext);
 
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return (
-    <div className={`App ${theme}`}>
+    <div className={`App`}>
       <Navbar />
       <Hero />
       <Skills />
@@ -21,4 +25,4 @@ const App = () => {
   );
 }
 
-export default App
+export default App;

@@ -10,7 +10,6 @@ const Hero = () => {
       <div className='hero-text'>
         <h1 className='text-8xl font-bold text-shadow-lg'>Welcome to my Portfolio</h1>
         <p className='text-2xl text-shadow-md'>I'm a passionate developer creating beautiful and functional web applications.</p>
-        <a href="#projects" className='mt-8 px-8 py-3 bg-indigo-600 text-white font-bold rounded-lg shadow-lg hover:bg-indigo-700 transition-colors duration-300'>View My Work</a>
       </div>
       <div className='hero-animation'>
         <Canvas>
