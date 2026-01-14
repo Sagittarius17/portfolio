@@ -13,18 +13,19 @@ body {
 }
 
 .nav-link:hover {
-  color: #6366f1;
+  color: #FFA500; /* Orange */
+  font-weight: bold;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -8px; /* Increased space */
   left: 0;
   width: 100%;
-  height: 2px;
-  background-color: #6366f1;
-  box-shadow: 0 0 10px #6366f1, 0 0 20px #6366f1, 0 0 40px #6366f1;
+  height: 4px; /* Bolder underline */
+  background-color: #FFA500; /* Orange */
+  box-shadow: 0 0 10px #FFA500, 0 0 20px #FFA500, 0 0 40px #FFA500;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
 }
