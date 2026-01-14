@@ -1,27 +1,24 @@
 import './App.css';
-import { Navbar, Welcome, Skills, Projects, PastWorks, Footer } from './components'
+import './styles/global.css';
+import { useContext } from 'react';
+import { Navbar, Footer } from './components';
+import Hero from './components/Hero';
+import Skills from './pages/Skills';
+import Projects from './pages/Projects';
+import { ThemeContext } from './context/ThemeContext';
 
 const App = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
       <Navbar />
-      <Welcome />
+      <Hero />
       <Skills />
       <Projects />
-      <PastWorks />
       <Footer />
     </div>
   );
 }
-// const cursor = document.querySelector('#cursor');
 
-// const moveCursor = (e)=> {
-//   const mouseY = e.clientY;
-//   const mouseX = e.clientX;
-   
-//   cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
- 
-// }
-
-// window.addEventListener('mousemove', moveCursor)
 export default App

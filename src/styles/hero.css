@@ -1,0 +1,20 @@
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.hero-text {
+    flex: 1;
+    color: var(--text-color-light);
+}
+
+.dark .hero-text {
+    color: var(--text-color-dark);
+}
+
+.hero-animation {
+    flex: 1;
+    height: 100%;
+}

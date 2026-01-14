@@ -1,0 +1,10 @@
+.footer {
+    padding: 2rem 0;
+    background-color: var(--card-background-light);
+    color: var(--text-color-light);
+}
+
+.dark .footer {
+    background-color: var(--card-background-dark);
+    color: var(--text-color-dark);
+}

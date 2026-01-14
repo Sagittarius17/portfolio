@@ -1,20 +1,12 @@
-// let loader = document.getElementById("preloader")
-// window.addEventListener("load", function(){
-//     loader.style.display = "none";
-// })
+import React from 'react';
+import '../styles/Loader.css';
 
-function showPreloader() {
-    const preloader = document.getElementById('preloader');
-    preloader.style.display = 'block';
-}
-  
-function hidePreloader() {
-  const preloader = document.getElementById('preloader');
-  preloader.style.display = 'none';
-}
-  
-window.onload = function() {
-  hidePreloader();
+const Loader = () => {
+    return (
+        <div className="loader-container">
+            <div className="loader"></div>
+        </div>
+    );
 };
-  
-  
+
+export default Loader;
