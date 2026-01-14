@@ -1,21 +1,21 @@
 import React from 'react';
 
 const ProjectCard = ({ project }) => {
-    const randomImageId = Math.floor(Math.random() * 1000);
-    const imageUrl = `https://picsum.photos/id/${randomImageId}/300/200`;
-
-    return (
-        <div className="card project-card flex flex-col">
-            <img src={imageUrl} alt={project.name} className="w-full h-40 object-cover" />
-            <div className="p-4 flex-grow flex flex-col">
-                <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-                <p className="text-sm flex-grow">{project.description}</p>
-                <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-3 rounded-lg text-sm self-start transition-colors duration-300">
-                    View on Github
-                </a>
-            </div>
+  return (
+    <a href={project.html_url} target="_blank" rel="noopener noreferrer">
+      <div className="relative rounded-lg overflow-hidden shadow-lg group h-56">
+        <img
+          className="absolute inset-0 w-full h-full object-cover"
+          src={`https://picsum.photos/seed/${project.id}/400/300`}
+          alt={project.name}
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-300"></div>
+        <div className="relative h-full flex flex-col justify-end p-4">
+          <h3 className="text-xl font-bold text-white">{project.name}</h3>
         </div>
-    );
+      </div>
+    </a>
+  );
 };
 
 export default ProjectCard;

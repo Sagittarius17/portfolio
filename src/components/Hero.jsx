@@ -6,8 +6,8 @@ const Hero = () => {
   return (
     <div className="h-screen flex justify-between items-center container mx-auto px-4" id="home">
       <div className="flex-1">
-        <h1 className="text-8xl font-bold text-shadow-lg">Welcome to my Portfolio</h1>
-        <p className="text-2xl text-shadow-md">I'm a passionate developer creating beautiful and functional web applications.</p>
+        <h1 className="text-8xl font-bold text-shadow-lg dark:text-white">Welcome to my Portfolio</h1>
+        <p className="text-2xl text-shadow-md dark:text-gray-300">I'm a passionate developer creating beautiful and functional web applications.</p>
         <a href="#projects" className="mt-10 inline-block px-8 py-3 bg-indigo-600 text-white font-bold rounded-lg shadow-lg hover:bg-indigo-700 transition-colors duration-300">View My Work</a>
       </div>
       <div className="flex-1 h-full">
