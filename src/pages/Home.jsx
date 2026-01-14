@@ -1,6 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { ThemeContext } from '../context/ThemeContext';
 
 
 function useWebsiteVisitorCounter() {
@@ -36,13 +37,14 @@ function WebsiteVisitorCounter() {
 }
 
 const Welcome = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <section id='home' className="flex flex-col items-center justify-center h-screen pt-[69px] bg-[#000]">
+    <section id='home' className={`flex flex-col items-center justify-center h-screen pt-[69px] ${theme === 'dark' ? 'bg-[#000]' : 'bg-[#fff]'}`}>
       {/* <h2 className="flex relative w-[100%] -top-[165px] text-4xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">WELCOME</h2> */}
       {/* <h2 className="flex relative w-[100%] -top-[165px] text-4xl text-white justify-center font-bold border-t-8 border-l-8 border-r-8 border-solid border-[#a0ff00] pt-6">WELCOME</h2> */}
       <WebsiteVisitorCounter />
       <div className="">
-        <p className="lg:text-lg text-sm text-white text-center mx-4 sm:mx-8 md:mx-16 lg:mx-28">
+        <p className={`lg:text-lg text-sm ${theme === 'dark' ? 'text-white' : 'text-black'} text-center mx-4 sm:mx-8 md:mx-16 lg:mx-28`}>
           Hello and welcome to my portfolio! This is a static website, I am thrilled to have you here and to share my work with you.
           This portfolio represents my passion, creativity, and dedication to my craft. Whether you are a potential client,
           colleague, friends or just curious about my work, I hope that you will find this portfolio informative and engaging.
