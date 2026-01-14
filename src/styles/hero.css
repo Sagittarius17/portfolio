@@ -7,11 +7,6 @@
 
 .hero-text {
     flex: 1;
-    color: var(--text-color-light);
-}
-
-.dark .hero-text {
-    color: var(--text-color-dark);
 }
 
 .hero-animation {
