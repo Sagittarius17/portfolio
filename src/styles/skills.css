@@ -1,7 +1,0 @@
-.skill-card {
-    transition: transform 0.3s ease-in-out;
-}
-
-.skill-card:hover {
-    transform: translateY(-0.5rem);
-}

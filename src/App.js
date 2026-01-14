@@ -1,13 +1,12 @@
-import './App.css';
-import './styles/global.css';
 import { useContext, useEffect } from 'react';
-import { Navbar, Footer } from './components';
 import Hero from './components/Hero';
+import Navbar from './components/Navbar';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
+import Footer from './components/Footer';
 import { ThemeContext } from './context/ThemeContext';
 
-const App = () => {
+function App() {
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
@@ -15,7 +14,7 @@ const App = () => {
   }, [theme]);
 
   return (
-    <div className={`App`}>
+    <div className="font-sans">
       <Navbar />
       <Hero />
       <Skills />

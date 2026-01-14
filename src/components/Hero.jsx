@@ -1,17 +1,16 @@
-
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
-import '../styles/hero.css';
 
 const Hero = () => {
   return (
-    <div className='hero-container container mx-auto px-4' id="home">
-      <div className='hero-text'>
-        <h1 className='text-8xl font-bold text-shadow-lg'>Welcome to my Portfolio</h1>
-        <p className='text-2xl text-shadow-md'>I'm a passionate developer creating beautiful and functional web applications.</p>
+    <div className="h-screen flex justify-between items-center container mx-auto px-4" id="home">
+      <div className="flex-1">
+        <h1 className="text-8xl font-bold text-shadow-lg">Welcome to my Portfolio</h1>
+        <p className="text-2xl text-shadow-md">I'm a passionate developer creating beautiful and functional web applications.</p>
+        <a href="#projects" className="mt-10 inline-block px-8 py-3 bg-indigo-600 text-white font-bold rounded-lg shadow-lg hover:bg-indigo-700 transition-colors duration-300">View My Work</a>
       </div>
-      <div className='hero-animation'>
+      <div className="flex-1 h-full">
         <Canvas>
           <Suspense fallback={null}>
             <OrbitControls enableZoom={false} />
